@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<link rel="stylesheet" href="admin.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text-btn/javascript" src="admin.js"></script>
+</head>
+<body>
+    <div class="img-logo"><img style="width: 300px; height: 90px" src="img/logo.png" /></div>
+    <div class="title-header">
+        <div class="title-subject">
+          <div class="item-title1">
+            <div >FAQ管理</div>
+            <div style="mix-blend-mode: multiply; justify-content: flex-start; align-items: flex-start; display: flex">
+              <div style="padding-left: 8px; padding-right: 8px; padding-top: 2px; padding-bottom: 2px; background: #F9F5FF; border-radius: 16px; justify-content: center; align-items: center; display: flex">
+                <div class="text-btnCountQuestion"><b>240 質問</b></div>
+              </div>
+            </div>
+          </div>
+          <span >質問と回答を管理します</span>
+        </div>
+      </div>
+
+
+
+      <div class="button-content">
+        <div class="button-group">
+          <div class="show-all">
+            <span class="text-btn" style="color: #1D2939; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">全表示</span>
+          </div>
+          <div class="show-kikan" id="showKiKan">
+            <span class="text-btn" style="color: #344054; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">この時期に多い質問</span>
+            <img class="img-icon-i" style="width: 14px; height: 14px" src="img/icon_i.png" />
+          </div>
+        </div>
+        <div onclick="A()" class="add-question" style="justify-content: flex-start; align-items: center; gap: 12px; display: flex">
+          <div class="button-add" style="border-radius: 8px; justify-content: flex-start; align-items: flex-start; display: flex">
+            <div class="button-base" style="padding-left: 16px; padding-right: 16px; padding-top: 10px; padding-bottom: 10px; background: #E68736; box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05); border-radius: 8px; overflow: hidden; border: 1px #E68736 solid; justify-content: center; align-items: center; gap: 8px; display: flex">
+              <div class="text-btn" style="color: white; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">+ 質問を追加</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <div id="tableKanri">
+        <table class="table-kanri">
+            <tr class="column-list-kanri">
+              <th class="column-kanri column-question">質問内容 <img src="img/arrow_down.png"></th>
+              <th class="column-kanri column-kaisuu">閲覧回数</th>
+              <th class="column-kanri column-date">作成日（更新日）</th>
+              <th class="column-kanri column-anwser">回答</th>
+              <th class="column-kanri column-status">状況</th>
+              <th class="column-kanri column-action">操作</th>
+            </tr>
+            <tr class="row-kanri">
+              <td>
+
+                <div style="justify-content: flex-start; align-items: center; gap: 5px; display: inline-flex">
+                    <img style="width: 30px; height: 30px; border-radius: 200px" src="img/Avatar.png" />
+                    <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                      <div style="color: #101828; font-family: Inter; font-weight: 700; line-height: 20px; word-wrap: break-word">料金の支払い方法は？</div>
+                      <div style=" color: #667085;  font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">レー ゴック チュン</div>
+                    </div>
+                  </div>
+
+              </td>
+              <td style="color: #E68736">23</td>
+              <td>2023/12/03 (2024/01/02)</td>
+              <td>お申し込み後、専用の振込用紙をお送り...</td>
+              <td>
+                <div style=" justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
+                    <div style="mix-blend-mode: multiply; justify-content: flex-start; align-items: flex-start; display: flex">
+                      <div style="padding-top: 2px; padding-bottom: 2px; padding-left: 6px; padding-right: 8px; background: #ECFDF3; border-radius: 16px; justify-content: center; align-items: center; gap: 6px; display: flex">
+                        <div style="width: 8px; height: 8px; position: relative">
+                          <div style="width: 6px; height: 6px; left: 1px; top: 1px; position: absolute; background: #12B76A; border-radius: 9999px"></div>
+                        </div>
+                        <div style="text-btn-align: center; color: #027A48; font-size: 12px; font-family: Inter; font-weight: 500; line-height: 18px; word-wrap: break-word">回答済</div>
+                      </div>
+                    </div>
+                    <div style="mix-blend-mode: multiply; justify-content: flex-start; align-items: flex-start; display: flex">
+                      <div style="padding-left: 8px; padding-right: 8px; padding-top: 2px; padding-bottom: 2px; background: #EFF8FF; border-radius: 16px; justify-content: center; align-items: center; display: flex">
+                        <div style="text-btn-align: center; color: #175CD3; font-size: 12px; font-family: Inter; font-weight: 500; line-height: 18px; word-wrap: break-word">表示</div>
+                      </div>
+                    </div>
+                  </div>
+
+              </td>
+              <td>
+                <div style="width: 40px; height: 40px; border-radius: 8px; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                    <div style="padding: 10px; border-radius: 8px; overflow: hidden; justify-content: center; align-items: center; gap: 8px; display: flex">
+                    <a><img style="width: 15px; height:15px;" src="img/icon_trash.png"></a>
+                    </div>
+                </div>
+                <div style="width: 40px; height: 40px; border-radius: 8px; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                    <div style="padding: 10px; border-radius: 8px; overflow: hidden; justify-content: center; align-items: center; gap: 8px; display: flex">
+                    <a><img src="img/icon_edit.png"></a>
+                    </div>
+                </div>
+
+
+              </td>
+            </tr>
+
+            <tr class="row-kanri">
+              <td>
+
+                <div style="justify-content: flex-start; align-items: center; gap: 5px; display: inline-flex">
+                    <img style="width: 30px; height: 30px; border-radius: 200px" src="img/Avatar.png" />
+                    <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                      <div style="color: #101828; font-family: Inter; font-weight: 700; line-height: 20px; word-wrap: break-word">料金の支払い方法は？</div>
+                      <div style=" color: #667085;  font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">レー ゴック チュン</div>
+                    </div>
+                  </div>
+
+              </td>
+              <td style="color: #E68736">23</td>
+              <td>2023/12/03 (2024/01/02)</td>
+              <td>お申し込み後、専用の振込用紙をお送り...</td>
+              <td>
+                <div style=" justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
+                    <div style="mix-blend-mode: multiply; justify-content: flex-start; align-items: flex-start; display: flex">
+                      <div style="padding-top: 2px; padding-bottom: 2px; padding-left: 6px; padding-right: 8px; background: #ECFDF3; border-radius: 16px; justify-content: center; align-items: center; gap: 6px; display: flex">
+                        <div style="width: 8px; height: 8px; position: relative">
+                          <div style="width: 6px; height: 6px; left: 1px; top: 1px; position: absolute; background: #12B76A; border-radius: 9999px"></div>
+                        </div>
+                        <div style="text-btn-align: center; color: #027A48; font-size: 12px; font-family: Inter; font-weight: 500; line-height: 18px; word-wrap: break-word">回答済</div>
+                      </div>
+                    </div>
+                    <div style="mix-blend-mode: multiply; justify-content: flex-start; align-items: flex-start; display: flex">
+                      <div style="padding-left: 8px; padding-right: 8px; padding-top: 2px; padding-bottom: 2px; background: #EFF8FF; border-radius: 16px; justify-content: center; align-items: center; display: flex">
+                        <div style="text-btn-align: center; color: #175CD3; font-size: 12px; font-family: Inter; font-weight: 500; line-height: 18px; word-wrap: break-word">表示</div>
+                      </div>
+                    </div>
+                  </div>
+
+              </td>
+              <td>
+                <div style="width: 40px; height: 40px; border-radius: 8px; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                    <div style="padding: 10px; border-radius: 8px; overflow: hidden; justify-content: center; align-items: center; gap: 8px; display: flex">
+                    <a><img style="width: 15px; height:15px;" src="img/icon_trash.png"></a>
+                    </div>
+                </div>
+                <div style="width: 40px; height: 40px; border-radius: 8px; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                    <div style="padding: 10px; border-radius: 8px; overflow: hidden; justify-content: center; align-items: center; gap: 8px; display: flex">
+                    <a><img src="img/icon_edit.png"></a>
+                    </div>
+                </div>
+
+
+              </td>
+            </tr>
+
+            
+          </table>
+
+
+
+
+          <div class="footer-kanri">
+            <div style="color: #344054; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">1/10ページ目</div>
+            <div style="justify-content: flex-start; align-items: flex-start; gap: 12px; display: flex">
+              <div style="border-radius: 8px; justify-content: flex-start; align-items: flex-start; display: flex">
+                <div style="padding-left: 14px; padding-right: 14px; padding-top: 8px; padding-bottom: 8px; background: white; box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05); border-radius: 8px; overflow: hidden; border: 1px #D0D5DD solid; justify-content: center; align-items: center; gap: 8px; display: flex">
+                  <div style="color: #344054; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word"><</div>
+                </div>
+              </div>
+              <div style="border-radius: 8px; justify-content: flex-start; align-items: flex-start; display: flex">
+                <div style="padding-left: 14px; padding-right: 14px; padding-top: 8px; padding-bottom: 8px; background: white; box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05); border-radius: 8px; overflow: hidden; border: 1px #D0D5DD solid; justify-content: center; align-items: center; gap: 8px; display: flex">
+                  <div style="color: #344054; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    </div>
+
+    
+</body>
+</html>

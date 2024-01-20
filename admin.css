@@ -1,0 +1,107 @@
+.img-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title-header{
+
+    width: 100%;
+    
+    padding-top: 10px;
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    gap: 16px; 
+    display: inline-flex
+}
+.title-subject{
+    padding-left: 10px;
+    flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex
+}
+.item-title1{
+    align-self: stretch; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex
+}
+.itemBlockTitle1{
+    color: #101828; font-size: 18px; font-family: Inter; font-weight: 500; line-height: 28px; word-wrap: break-word
+}
+.text-btnCountQuestion{
+    color: #512ea1; font-size: 12px; font-family: Inter; font-weight: 500; line-height: 18px; word-wrap: break-word
+}
+
+
+/* button group */
+.button-content{
+    width: 100%;
+    padding-top: 12px; padding-bottom: 12px; border-radius: 12px; justify-content: space-between; align-items: center; display: inline-flex
+}
+
+.button-group{
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px #D0D5DD solid;
+        justify-content: flex-start;
+        /* align-items: center; */
+        display: flex;
+}
+.show-all{
+    padding-top: 10px; padding-bottom: 10px;
+    padding-left: 16px; padding-right: 16px; border-right: 1px #D0D5DD solid;  align-items: center; gap: 8px; display: flex
+}
+.show-kikan{
+    padding-top: 10px; padding-bottom: 10px;
+    padding-left: 16px; padding-right: 16px; justify-content: center; align-items: center; gap: 8px; display: flex
+}
+
+
+/* table */
+.row-kanri {
+    border-bottom: 1px #EAECF0 solid;
+}
+
+tbody{
+    width: 100%; 
+    font-size: 12px;
+}
+.column-list-kanri{
+    width: 100%;
+}
+.table-kanri{
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    border-radius: 8px;
+    border: 1px solid var(--Gray-200, #EAECF0);
+    background: var(--White, #FFF);
+
+    /* Shadow/sm */
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.06), 0px 1px 3px 0px rgba(16, 24, 40, 0.10);
+}
+.column-kanri {
+    text-btn-align: left;
+    border-bottom: 1px solid var(--Gray-200, #EAECF0);
+    height: 30px;
+    font-size: 10px;
+    justify-items: center;
+}
+.column-question, .column-anwser{
+    width: 20%;
+}
+.column-date{
+    width: 20%;
+}
+.column-status{
+    width: 15%;
+}
+.column-kaisuu{
+    width: 10%;
+}
+.column-action{
+    width: 10%;
+}
+
+
+.footer-kanri{
+    width:100%;
+    padding-top: 10px;
+    justify-content: space-between; align-items: center; display: inline-flex
+}
