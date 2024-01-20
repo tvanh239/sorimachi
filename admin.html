@@ -4,25 +4,52 @@
 <meta charset="UTF-8">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<link rel="stylesheet" href="jquery-ui.css">
 <link rel="stylesheet" href="admin.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script type="text-btn/javascript" src="admin.js"></script>
+<script src="ckeditor.js"></script>
+<script src="jquery-3.7.1.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="admin.js"></script>
 </head>
 <body>
-    <div class="img-logo"><img style="width: 300px; height: 90px" src="img/logo.png" /></div>
-    <div class="title-header">
-        <div class="title-subject">
-          <div class="item-title1">
-            <div >FAQ管理</div>
-            <div style="mix-blend-mode: multiply; justify-content: flex-start; align-items: flex-start; display: flex">
-              <div style="padding-left: 8px; padding-right: 8px; padding-top: 2px; padding-bottom: 2px; background: #F9F5FF; border-radius: 16px; justify-content: center; align-items: center; display: flex">
-                <div class="text-btnCountQuestion"><b>240 質問</b></div>
-              </div>
+  <div id="dialog" class="dialog-kanri" style="display:none;">
+    <div style=" justify-content: flex-start; align-items: center; gap: 20px; display: inline-flex">
+      <img style="width: 30px; height: 30px; border-radius: 200px" src="img/Avatar.png" />
+      <div><span style="color: #101828; font-size: 12px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">そりまち農場<br/></span><span style="color: #101828; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">Luyen xinh dep Luyen</span></div>
+    </div>
+    <div>
+      <div class="dialog-question-name" style="padding-top:10px;">
+          <span class="dialog-question-label">質問者</div>
+          <input class="dialog-question-name-input"  placeholder="氏名を入力">
+      </div>
+      <div class="dialog-question-subject" style="padding-top:10px;">
+          <span class="dialog-question-label">質問内容</div>
+          <div id="editor"></div>
+      </div>
+      <div class="dialog-question-file" style="padding-top:10px;">
+          <span style="color: #344054; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">添付ファイル  </span><span style="color: #27705E; font-size: 14px; font-family: Inter; font-weight: 700; line-height: 20px; word-wrap: break-word">※</span><span style="color: #27705E; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">画像やPDFファイルを複数アップロードできます。</span></span>
+      </div>
+  </div>
+    
+  </div>
+
+
+
+  <div class="img-logo"><img style="width: 300px; height: 90px" src="img/logo.png" /></div>
+  <div class="title-header">
+      <div class="title-subject">
+        <div class="item-title1">
+          <div >FAQ管理</div>
+          <div style="mix-blend-mode: multiply; justify-content: flex-start; align-items: flex-start; display: flex">
+            <div style="padding-left: 8px; padding-right: 8px; padding-top: 2px; padding-bottom: 2px; background: #F9F5FF; border-radius: 16px; justify-content: center; align-items: center; display: flex">
+              <div class="text-btnCountQuestion"><b>240 質問</b></div>
             </div>
           </div>
-          <span >質問と回答を管理します</span>
         </div>
+        <span >質問と回答を管理します</span>
       </div>
+    </div>
 
 
 
@@ -35,9 +62,15 @@
             <span class="text-btn" style="color: #344054; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">この時期に多い質問</span>
             <img class="img-icon-i" style="width: 14px; height: 14px" src="img/icon_i.png" />
           </div>
+          <div class="pop-up">
+            <img style="width:20px; height:10px;" src="img/icon_popup.png">
+            <div class="Frame1" style="width: 300px; height: 59px; left: 0px; top: 8px; position: absolute; background: #CCDDC9; border-radius: 7px; justify-content: center; align-items: center; display: inline-flex">
+              <span  style="width: 250px; height: 32px; color: black; font-size: 12px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">クリックで12/01～02/28の期間に多く閲覧されたQA順で表示</span>
+            </div>
+          </div>
         </div>
-        <div onclick="A()" class="add-question" style="justify-content: flex-start; align-items: center; gap: 12px; display: flex">
-          <div class="button-add" style="border-radius: 8px; justify-content: flex-start; align-items: flex-start; display: flex">
+        <div onclick="openDialog(1)" class="add-question" style="justify-content: flex-start; align-items: center; gap: 12px; display: flex">
+          <div class="button-add">
             <div class="button-base" style="padding-left: 16px; padding-right: 16px; padding-top: 10px; padding-bottom: 10px; background: #E68736; box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05); border-radius: 8px; overflow: hidden; border: 1px #E68736 solid; justify-content: center; align-items: center; gap: 8px; display: flex">
               <div class="text-btn" style="color: white; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">+ 質問を追加</div>
             </div>
@@ -90,13 +123,13 @@
 
               </td>
               <td>
-                <div style="width: 40px; height: 40px; border-radius: 8px; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-                    <div style="padding: 10px; border-radius: 8px; overflow: hidden; justify-content: center; align-items: center; gap: 8px; display: flex">
+                <div  onclick="alert('trash');" style=" margin-right:10px; display: inline-flex">
+                    <div style=" border-radius: 8px;">
                     <a><img style="width: 15px; height:15px;" src="img/icon_trash.png"></a>
                     </div>
                 </div>
-                <div style="width: 40px; height: 40px; border-radius: 8px; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-                    <div style="padding: 10px; border-radius: 8px; overflow: hidden; justify-content: center; align-items: center; gap: 8px; display: flex">
+                <div  onclick="openDialog(2);" style=" display: inline-flex">
+                    <div style=" border-radius: 8px;">
                     <a><img src="img/icon_edit.png"></a>
                     </div>
                 </div>
@@ -104,6 +137,8 @@
 
               </td>
             </tr>
+
+
 
             <tr class="row-kanri">
               <td>
@@ -139,13 +174,13 @@
 
               </td>
               <td>
-                <div style="width: 40px; height: 40px; border-radius: 8px; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-                    <div style="padding: 10px; border-radius: 8px; overflow: hidden; justify-content: center; align-items: center; gap: 8px; display: flex">
+                <div onclick="alert('trash');" style=" border-radius: 8px; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                    <div style=" margin-right:10px; display: inline-flex">
                     <a><img style="width: 15px; height:15px;" src="img/icon_trash.png"></a>
                     </div>
                 </div>
-                <div style="width: 40px; height: 40px; border-radius: 8px; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-                    <div style="padding: 10px; border-radius: 8px; overflow: hidden; justify-content: center; align-items: center; gap: 8px; display: flex">
+                <div onclick="alert('edit');" style="border-radius: 8px; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+                    <div style=" border-radius: 8px;">
                     <a><img src="img/icon_edit.png"></a>
                     </div>
                 </div>
@@ -161,16 +196,16 @@
 
 
           <div class="footer-kanri">
-            <div style="color: #344054; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">1/10ページ目</div>
-            <div style="justify-content: flex-start; align-items: flex-start; gap: 12px; display: flex">
-              <div style="border-radius: 8px; justify-content: flex-start; align-items: flex-start; display: flex">
-                <div style="padding-left: 14px; padding-right: 14px; padding-top: 8px; padding-bottom: 8px; background: white; box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05); border-radius: 8px; overflow: hidden; border: 1px #D0D5DD solid; justify-content: center; align-items: center; gap: 8px; display: flex">
-                  <div style="color: #344054; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word"><</div>
+            <span style="font-size:12px">1/10ページ目</span>
+            <div class="move-page">
+              <div onclick="alert('prev-page')" id="prevPage" class="change-btn-page">
+                <div class="change-page">
+                  <div style="color: #344054; font-size: 12px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word"><</div>
                 </div>
               </div>
-              <div style="border-radius: 8px; justify-content: flex-start; align-items: flex-start; display: flex">
-                <div style="padding-left: 14px; padding-right: 14px; padding-top: 8px; padding-bottom: 8px; background: white; box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05); border-radius: 8px; overflow: hidden; border: 1px #D0D5DD solid; justify-content: center; align-items: center; gap: 8px; display: flex">
-                  <div style="color: #344054; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">></div>
+              <div onclick="alert('next-page')" id="nextPage" class="change-btn-page">
+                <div class="change-page">
+                  <div style="color: #344054; font-size: 12px; font-family: Inter; font-weight: 500; line-height: 20px; word-wrap: break-word">></div>
                 </div>
               </div>
             </div>

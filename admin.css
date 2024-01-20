@@ -50,38 +50,75 @@
     padding-top: 10px; padding-bottom: 10px;
     padding-left: 16px; padding-right: 16px; justify-content: center; align-items: center; gap: 8px; display: flex
 }
+.pop-up {
+    margin-top: 30px;
+    margin-left: 70px;
+    display: none;
+    width: 300px;
+    height: 67px;
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+}
+
+.pop-up img {
+    width: 100%;
+    height: 100%;
+}
+
+.pop-up .Frame1 {
+    display: none;
+    width: 300px;
+    height: 59px;
+    position: absolute;
+    left: 0px;
+    top: 8px;
+    background: #CCDDC9;
+    border-radius: 7px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+}
+
+.show-kikan:hover + .pop-up {
+display: block;
+}
 
 
 /* table */
 .row-kanri {
-    border-bottom: 1px #EAECF0 solid;
+    border-bottom: 1px #000000 solid;
+   
 }
 
 tbody{
     width: 100%; 
     font-size: 12px;
+    
 }
+
 .column-list-kanri{
     width: 100%;
+    padding: 0;
+    margin: 0;
+    
 }
 .table-kanri{
+    padding: 0;
+    margin: 0;
     width: 100%;
-    flex-direction: column;
     align-items: flex-start;
     align-self: stretch;
     border-radius: 8px;
-    border: 1px solid var(--Gray-200, #EAECF0);
     background: var(--White, #FFF);
-
-    /* Shadow/sm */
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.06), 0px 1px 3px 0px rgba(16, 24, 40, 0.10);
 }
 .column-kanri {
     text-align: left;
-    border-bottom: 1px solid var(--Gray-200, #EAECF0);
     height: 30px;
     font-size: 10px;
     justify-items: center;
+    padding:0;
 }
 .column-question, .column-anwser{
     width: 20%;
@@ -100,8 +137,45 @@ tbody{
 }
 
 
+/* footer */
 .footer-kanri{
     width:100%;
     padding-top: 10px;
     justify-content: space-between; align-items: center; display: inline-flex
+}
+.move-page{
+    justify-content: flex-start; align-items: flex-start; gap: 12px; display: flex
+}
+
+.change-page{
+    padding-left: 14px; padding-right: 14px; padding-top: 8px; padding-bottom: 8px; background: white; box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05); border-radius: 8px; overflow: hidden; border: 1px #D0D5DD solid; justify-content: center; align-items: center; gap: 8px; display: flex
+}
+
+
+.dialog-kanri {
+    display: flex;
+    width: 786px;
+    flex-direction: column;
+    background: var(--Base-White, #ffffff);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 1px black  solid;
+    border-bottom: 1px black solid;
+    border-right: 1px black  solid;
+    /* Shadow / xl */
+    box-shadow: 0px 8px 8px -4px rgba(16, 24, 40, 0.04), 0px 20px 24px -4px rgba(16, 24, 40, 0.10);
+    
+    
+}
+
+.dialog-question-name{
+    padding-top:10px;
+}
+.dialog-question-label{
+    color: #344054; font-size: 14px; font-family: Inter; font-weight: 700; line-height: 20px; word-wrap: break-word
+}
+
+
+.dialog-question-name-input{
+    width: 100%;
 }
