@@ -77,7 +77,7 @@ tbody{
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.06), 0px 1px 3px 0px rgba(16, 24, 40, 0.10);
 }
 .column-kanri {
-    text-btn-align: left;
+    text-align: left;
     border-bottom: 1px solid var(--Gray-200, #EAECF0);
     height: 30px;
     font-size: 10px;
