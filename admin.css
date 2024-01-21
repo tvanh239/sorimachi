@@ -153,6 +153,7 @@ tbody{
 
 
 .dialog-kanri {
+    overflow-y: hidden;
     display: flex;
     width: 786px;
     flex-direction: column;
@@ -178,4 +179,67 @@ tbody{
 
 .dialog-question-name-input{
     width: 100%;
+}
+
+.ck-editor__editable_inline {
+    min-height: 100px;
+}
+
+/* Product Card */
+.file-update-block {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  /* Main Container */
+.main-file-container {
+    padding:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+  /* Drop Zone */
+.drop-zone {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    flex-direction: column;
+}
+  
+  /* Drop Zone Text */
+.drop-zone-text {
+    color: #000000;
+    font-size: 16px;
+}
+  
+  /* Highlighted Drop Zone */
+.drop-zone.dragged-over {
+    background-color: rgba(255, 90, 95, 0.2);
+}
+  
+  /* Drop Zone Icons */
+.drop-zone-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-icon {
+    height: 48px;  /* Increased icon size */
+    width: 48px;   /* Increased icon size */
+    margin-bottom: 10px;
+}
+
+/* Drop Zone Text */
+.drop-zone-text {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px; /* Added to separate text from icons */
 }

@@ -20,17 +20,76 @@
     </div>
     <div>
       <div class="dialog-question-name" style="padding-top:10px;">
-          <span class="dialog-question-label">質問者</div>
+          <span class="dialog-question-label">質問者</span>
           <input class="dialog-question-name-input"  placeholder="氏名を入力">
       </div>
       <div class="dialog-question-subject" style="padding-top:10px;">
-          <span class="dialog-question-label">質問内容</div>
-          <div id="editor"></div>
+          <span class="dialog-question-label">質問内容</span>
+          <div id="editor"></div> 
       </div>
+          
       <div class="dialog-question-file" style="padding-top:10px;">
-          <span style="color: #344054; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">添付ファイル  </span><span style="color: #27705E; font-size: 14px; font-family: Inter; font-weight: 700; line-height: 20px; word-wrap: break-word">※</span><span style="color: #27705E; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 20px; word-wrap: break-word">画像やPDFファイルを複数アップロードできます。</span></span>
+          <span style="color: #344054; font-size: 14px; font-family: Inter;line-height: 20px; word-wrap: break-word">添付ファイル  <span style="color: #27705E; font-size: 14px; font-family: Inter; line-height: 20px; word-wrap: break-word"><b>※画像やPDFファイルを複数アップロードできます。</b></span></span>
       </div>
-  </div>
+      
+      <!-- Product Card Container -->
+      <div class="file-update-block">
+        <!-- Main Container -->
+        <div class="main-file-container">
+          <div id="dropZone" class="drop-zone">
+            <div class="drop-zone-icons">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M6.66667 13.3333L10 10M10 10L13.3333 13.3333M10 10V17.5M16.6667 13.9524C17.6846 13.1117 18.3333 11.8399 18.3333 10.4167C18.3333 7.88536 16.2813 5.83333 13.75 5.83333C13.5679 5.83333 13.3975 5.73833 13.3051 5.58145C12.2184 3.73736 10.212 2.5 7.91667 2.5C4.46489 2.5 1.66667 5.29822 1.66667 8.75C1.66667 10.4718 2.36287 12.0309 3.48912 13.1613" stroke="#475467" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="drop-zone-text" id="dropText">ここにファイルを <span style="color:#E68736">ドラッグ＆ドロップ</span></span>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div>
+        <div class="dialog-question-subject" style="padding-top:10px;">
+          <span class="dialog-question-label">回答内容</span>
+          <div id="editor2"></div> 
+        </div>
+        <div class="dialog-question-file" style="padding-top:10px;">
+          <span style="color: #344054; font-size: 14px; font-family: Inter;line-height: 20px; word-wrap: break-word">添付ファイル  <span style="color: #27705E; font-size: 14px; font-family: Inter; line-height: 20px; word-wrap: break-word"><b>※画像やPDFファイルを複数アップロードできます。</b></span></span>
+        </div>
+        <div class="file-update-block">
+          <!-- Main Container -->
+          <div class="main-file-container">
+            <div id="dropZone" class="drop-zone">
+              <div class="drop-zone-icons">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M6.66667 13.3333L10 10M10 10L13.3333 13.3333M10 10V17.5M16.6667 13.9524C17.6846 13.1117 18.3333 11.8399 18.3333 10.4167C18.3333 7.88536 16.2813 5.83333 13.75 5.83333C13.5679 5.83333 13.3975 5.73833 13.3051 5.58145C12.2184 3.73736 10.212 2.5 7.91667 2.5C4.46489 2.5 1.66667 5.29822 1.66667 8.75C1.66667 10.4718 2.36287 12.0309 3.48912 13.1613" stroke="#475467" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="drop-zone-text" id="dropText">ここにファイルを <span style="color:#E68736">ドラッグ＆ドロップ</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dialog-question-name" style="padding-top:10px;">
+          <span class="dialog-question-label">閲覧回数</span>
+          <input class="dialog-question-name-input"  placeholder="閲覧回数を入力">
+        </div>
+
+        <div class="dialog-question-name" style="padding-top:10px;">
+          <input type="checkbox"> 
+          <span>利用者側に表示する</span>
+        </div>
+      </div>
+    </div>
+    <div style="justify-content: flex-end; align-items: center; gap: 12px; display: inline-flex">
+      <div onclick="closeDiaLog()" style="padding-left: 18px; padding-right: 18px; padding-top: 10px; padding-bottom: 10px; background: white; box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05); border-radius: 8px; overflow: hidden; border: 1px #D0D5DD solid; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: #344054; font-size: 16px; font-family: Inter; font-weight: 600; line-height: 24px; word-wrap: break-word">キャンセル</div>
+      </div>
+      <div style="padding-left: 18px; padding-right: 18px; padding-top: 10px; padding-bottom: 10px; background: #E68736; box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05); border-radius: 8px; overflow: hidden; border: 1px #7F56D9 solid; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: white; font-size: 16px; font-family: Inter; font-weight: 600; line-height: 24px; word-wrap: break-word">登録</div>
+      </div>
+    </div>
     
   </div>
 
